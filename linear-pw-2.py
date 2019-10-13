@@ -11,15 +11,15 @@ data.columns = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'c
 
 data = data.sample(frac=1, random_state=42).reset_index(drop=True)
 
-values = data['petal-length']
+# values = data['petal-width']
 
-plt.figure(figsize=(7, 4))
-plt.tight_layout()
-plt.hist(values, bins=[1, 2, 3, 4], rwidth=0.98)
+# plt.figure(figsize=(7, 4))
+# plt.tight_layout()
+# plt.hist(values, bins=[1, 2, 3, 4], rwidth=0.98)
 
 
 data_x = data.iloc[:, :2]   # the x values sepal-length and sepal-width. All rows, column 1 and column 2
-data_y = data.iloc[:, 2]    # the y values : petal-length
+data_y = data.iloc[:, 3]    # the y values : petal-width
 
 
 scaler = StandardScaler()

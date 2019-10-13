@@ -6,20 +6,20 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn import  metrics
 
-data = pd.read_csv('./iris.csv')
-data.columns = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
+data = pd.read_csv('./iris-2.csv')
+data.columns = ['sepal-length', 'sepal-width', 'petal-length', 'numeric-class', 'petal-width', 'class']
 
 data = data.sample(frac=1, random_state=42).reset_index(drop=True)
 
-values = data['petal-width']
+# values = data['numeric-class']
+#
+# plt.figure(figsize=(7, 4))
+# plt.tight_layout()
+# plt.hist(values, bins=[1, 2, 3, 4], rwidth=0.98)
 
-plt.figure(figsize=(7, 4))
-plt.tight_layout()
-plt.hist(values, bins=[1, 2, 3, 4], rwidth=0.98)
 
-
-data_x = data.iloc[:, :2]   # the x values sepal-length and sepal-width. All rows, column 1 and column 2
-data_y = data.iloc[:, 3]    # the y values : petal-width
+data_x = data.iloc[:, :4]   # the x values sepal-length and sepal-width. All rows, column 1 and column 2
+data_y = data.iloc[:, 4]    # the y values : numeric-class
 
 
 scaler = StandardScaler()
